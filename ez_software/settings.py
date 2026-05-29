@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'proyectos_bancos.urls'
+ROOT_URLCONF = 'ez_software.urls'
 
 TEMPLATES = [
     {
@@ -68,8 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'proyectos_bancos.wsgi.application'
-
+WSGI_APPLICATION = 'ez_software.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases

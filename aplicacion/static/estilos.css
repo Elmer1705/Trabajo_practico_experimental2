@@ -1,85 +1,184 @@
-/* Configuración general de la página */
-body {
-    background-color: #f0f4f8;
+/* Estilos Globales Modernos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Barra de Navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #1e293b;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .logo span {
+    color: #38bdf8;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.navbar nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #38bdf8;
+}
+
+/* Sección Hero */
+.hero-section {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: 60px;
 }
 
-/* Caja contenedora del formulario */
-.contenedor-formulario {
+.hero-content h1 {
+    color: #ffffff;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: #94a3b8;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.btn-primary {
+    background-color: #38bdf8;
+    color: #0f172a;
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0ea5e9;
+}
+
+/* Sección Nosotros */
+.about-section {
+    padding: 80px 10%;
+    text-align: center;
     background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+}
+
+.about-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #0f172a;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #475569;
+}
+
+/* Sección Servicios */
+.services-section {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: #f1f5f9;
+}
+
+.services-section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #0f172a;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+.service-card p {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Footer Corporativo */
+.corporate-footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    padding: 60px 10% 30px 10%;
     text-align: center;
 }
 
-h2 {
-    color: #334e68;
-    margin-bottom: 25px;
-}
-
-/* Organización de las etiquetas y cuadros de texto */
-.grupo-entrada {
-    text-align: left;
+.corporate-footer h3 {
+    color: #ffffff;
     margin-bottom: 15px;
 }
 
-label {
-    display: block;
-    color: #486581;
+.corporate-footer p {
     font-size: 14px;
-    margin-bottom: 5px;
-    font-weight: 600;
+    margin-bottom: 8px;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #cbd5e1;
-    border-radius: 6px;
-    font-size: 16px;
-    box-sizing: border-box;
-    transition: border-color 0.2s;
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background-color: #334155;
+    margin: 30px 0;
 }
 
-/* Cambio de color cuando el usuario hace clic en el cuadro */
-input:focus {
-    border-color: #627d98;
-    outline: none;
-}
-
-/* Estilo del botón de ejecutar */
-button {
-    background-color: #243b53;
-    color: #ffffff;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 6px;
-    width: 100%;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    margin-top: 10px;
-}
-
-/* Efecto cuando pasas el mouse por encima del botón */
-button:hover {
-    background-color: #334e68;
-}
-
-/* Espacio donde saldrán los números multiplicados */
-.resultado {
-    margin-top: 20px;
-    text-align: left;
-    color: #102a43;
-    font-size: 16px;
-    line-height: 1.6;
+.copyright {
+    font-size: 12px;
+    color: #64748b;
 }

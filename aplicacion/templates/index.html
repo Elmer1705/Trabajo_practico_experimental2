@@ -1,36 +1,194 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla de Multiplicar</title>
-    
+    <title>EZ Software Solutions | Consultoría & Arquitectura Backend</title>
+    {% load static %}
     <link rel="stylesheet" href="{% static 'estilos.css' %}">
 </head>
 <body>
 
-    <div class="contenedor-formulario">
-        <h2>Calculadora de Tablas</h2>
+    <header class="navbar">
+        <div class="logo">EZ <span>Software Solutions</span></div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">La Empresa</a>
+            <a href="#arquitectura">Arquitectura MVT</a>
+            <a href="#seguridad">Seguridad & Git</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#datos">Datos Legales</a>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero-section">
+        <div class="hero-content">
+            <span class="badge">ENTORNO DE DESARROLLO SEGURO v2.0.26</span>
+            <h1>Enterprise Web Systems & Core Engineering</h1>
+            <p>Especialistas en la construcción de infraestructuras críticas, optimización de algoritmos en Python y despliegue automatizado de arquitecturas robustas bajo el framework Django.</p>
+            <a href="#arquitectura" class="btn-primary">Ver Documentación Técnica</a>
+        </div>
+    </section>
+
+    <section id="nosotros" class="about-section">
+        <div class="section-header">
+            <h2>Manifiesto Corporativo</h2>
+            <p class="subtitle">Conectando la ingeniería de software con el crecimiento empresarial</p>
+        </div>
+        <div class="about-container">
+            <p>
+                Fundada y dirigida por el desarrollador principal <strong>Elmer Zambrano</strong>, <strong>EZ Software Solutions</strong> es una firma de consultoría tecnológica ecuatoriana que nació con el firme propósito de estructurar plataformas web de alto rendimiento. Nos especializamos en mitigar la complejidad del software mediante el diseño de arquitecturas limpias, escalables y mantenibles a largo plazo.
+            </p>
+            
+            <div class="mision-vision-grid">
+                <div class="mv-card">
+                    <h3>Nuestra Misión</h3>
+                    <p>Proveer soluciones tecnológicas integrales y desarrollo de sistemas backend robustos, impulsando la transformación digital de los comercios y emprendimientos de la región costera del Ecuador mediante el uso de metodologías ágiles y software de código abierto.</p>
+                </div>
+                <div class="mv-card">
+                    <h3>Nuestra Visión</h3>
+                    <p>Para el año 2030, consolidarnos como una consultora líder en el desarrollo de aplicaciones empresariales a medida en la provincia del Guayas, reconocida por la calidad arquitectónica de nuestros productos y el estricto compromiso con la seguridad de la información.</p>
+                </div>
+            </div>
+
+            <div class="valores-box">
+                <h3>Valores Fundacionales</h3>
+                <ul>
+                    <li><strong>Transparencia Radica en el Código:</strong> Entregamos software 100% documentado, auditable y libre de deuda técnica.</li>
+                    <li><strong>Eficiencia Algorítmica:</strong> Diseñamos lógica optimizada que minimiza el consumo de recursos en el servidor.</li>
+                    <li><strong>Soberanía Tecnológica:</strong> Promovemos ecosistemas basados en Python y Django, eliminando los costosos licenciamientos de software privativo.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="arquitectura" class="tech-section">
+        <div class="section-header">
+            <h2>Especificación de la Arquitectura del Sistema</h2>
+            <p class="subtitle">Análisis del patrón de diseño implementado en este Taller Práctico</p>
+        </div>
         
-        <div class="grupo-entrada">
-            <label for="numeroTabla">¿Qué tabla deseas calcular?</label>
-            <input type="number" id="numeroTabla" placeholder="Ej. 5">
+        <div class="tech-container">
+            <p class="tech-intro">
+                Este software está construido sobre el framework corporativo <strong>Django</strong>, utilizando el patrón arquitectónico estructural <strong>MVT (Model-View-Template)</strong>. A diferencia del MVC convencional, Django gestiona de forma nativa el acoplamiento de sus componentes para acelerar el despliegue:
+            </p>
+
+            <div class="mvt-details">
+                <div class="mvt-block">
+                    <h4>Capa de Modelos (Model)</h4>
+                    <p>Gestiona la persistencia de datos. Mediante el uso del **ORM integrado de Django**, las clases de Python se mapean y traducen automáticamente a tablas relacionales dentro del motor local **SQLite3 (db.sqlite3)**, evitando la necesidad de inyectar sentencias SQL puras manuales.</p>
+                </div>
+                <div class="mvt-block">
+                    <h4>Capa de Vistas (View)</h4>
+                    <p>Representa el cerebro y la lógica de negocio del backend. Ubicado en el archivo <code>views.py</code>, se encarga de interceptar las peticiones HTTP (requests) enviadas por el cliente, procesar los datos requeridos y retornar un objeto de respuesta compilado hacia el navegador de la Mac.</p>
+                </div>
+                <div class="mvt-block">
+                    <h4>Capa de Plantillas (Template)</h4>
+                    <p>Es la capa de presentación semántica (interfaz del usuario). Utiliza el motor <strong>Django Template Language (DTL)</strong> para permitir el renderizado dinámico de datos y la inclusión segura de recursos estáticos mediante etiquetas de servidor como <code>{% load static %}</code>.</p>
+                </div>
+            </div>
+
+            <div class="flow-box">
+                <h3>Ciclo de Vida de una Petición HTTP en este Proyecto</h3>
+                <ol>
+                    <li>El cliente ingresa a la dirección local del servidor o dominio web desde su máquina.</li>
+                    <li>El archivo central de enrutamiento <code>urls.py</code> intercepta la petición, analiza la cadena de texto y delega el control a la función correspondiente.</li>
+                    <li>La función <code>index</code> en el controlador <code>views.py</code> procesa la lógica y extrae el diccionario de contexto corporativo.</li>
+                    <li>El motor de plantillas unifica el archivo <code>index.html</code> con las hojas de estilos <code>estilos.css</code> y genera código plano interpretable por el cliente.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section id="seguridad" class="security-section">
+        <div class="section-header">
+            <h2>Protocolos de Seguridad & Control de Versiones</h2>
+            <p class="subtitle">Auditoría del entorno virtual y exclusión de dependencias críticas</p>
         </div>
 
-        <div class="grupo-entrada">
-            <label for="numeroLimite">¿Hasta qué número multiplicar?</label>
-            <input type="number" id="numeroLimite" placeholder="Ej. 12">
+        <div class="security-container">
+            <div class="security-card-main">
+                <h3>El Rol Estratégico del Archivo <code>.gitignore</code></h3>
+                <p>
+                    Durante la inicialización de este repositorio Git conectado a GitHub, se implementó una directiva estricta de aislamiento de archivos en la raíz del proyecto para cumplir con los estándares internacionales de desarrollo de software:
+                </p>
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>Archivo / Carpeta Excluida</th>
+                            <th>Razón Técnica de la Exclusión (Seguridad y Rendimiento)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>env/</code> o <code>venv/</code></td>
+                            <td>El entorno virtual contiene binarios y dependencias compiladas exclusivas para el sistema operativo de desarrollo (macOS). Su inclusión en GitHub corrompería el despliegue en sistemas Windows o Linux y agregaría más de 40 MB de basura al repositorio.</td>
+                        </tr>
+                        <tr>
+                            <td><code>db.sqlite3</code></td>
+                            <td>Aísla la base de datos de pruebas local. Evita la exposición involuntaria de registros de usuarios, configuraciones del sistema o datos confidenciales de desarrollo en servidores públicos de internet.</td>
+                        </tr>
+                        <tr>
+                            <td><code>__pycache__/</code> y <code>*.pyc</code></td>
+                            <td>Excluye los archivos de bytecode compilados generados automáticamente por el intérprete de Python, manteniendo el historial de commits limpio y enfocado puramente en código fuente editable.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+    </section>
 
-        <button id="btnCalcular">Calcular Tabla</button>
+    <section id="servicios" class="services-section">
+        <div class="section-header">
+            <h2>Líneas de Servicio de la Consultora</h2>
+            <p class="subtitle">Soluciones tecnológicas de alto nivel para el sector corporativo</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon-box">⚙️</div>
+                <h3>Arquitectura Backend Personalizada</h3>
+                <p>Diseño de microservicios, APIs REST y plataformas web robustas utilizando Python y Django, estructurando flujos de datos de alta velocidad.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon-box">🗄️</div>
+                <h3>Optimización de Bases de Datos</h3>
+                <p>Modelado lógico y físico de bases de datos relacionales, auditoría de consultas pesadas e integración transparente con ORM empresariales.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon-box">🛡️</div>
+                <h3>Auditoría de Código & Seguridad</h3>
+                <p>Refactorización de software con altos niveles de deuda técnica, migración de credenciales a variables de entorno protegidas y aseguramiento de servidores.</p>
+            </div>
+        </div>
+    </section>
 
-        <div id="resultadoTabla" class="resultado"></div>
-    </div>
-<button id="btnCalcular">Calcular Tabla</button>
-
-        <div id="resultadoTabla" class="resultado"></div>
-    </div>
+    <footer id="datos" class="corporate-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>EZ Software Solutions</h3>
+                <p>Desarrollo de Software de Alta Gama.</p>
+                <span class="server-status">SERVER STATUS: ONLINE</span>
+            </div>
+            <div class="footer-col">
+                <h4>Información Legal (Ecuador)</h4>
+                <p><strong>Representante Legal:</strong> Elmer Zambrano</p>
+                <p><strong>RUC / Identificación:</strong> Persona Natural - Inscrito en Línea</p>
+                <p><strong>Régimen Tributario:</strong> Régimen RIMPE - Emprendedor / SRI</p>
+                <p><strong>Comprobantes:</strong> Autorizado para Emisión de Notas de Venta / Facturación</p>
+            </div>
+            <div class="footer-col">
+                <h4>Matriz Operativa</h4>
+                <p><strong>Ubicación:</strong> Vía Milagro kilómetro 26</p>
+                <p><strong>Sector:</strong> Estero el Paraíso</p>
+                <p><strong>Ciudad:</strong> Milagro, Guayas, Ecuador</p>
+                <p><strong>Contacto Corporativo:</strong> elmer.zambrano@outlook.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <hr class="footer-divider">
+            <p>© 2026 EZ Software Solutions. Todos los derechos reservados. Desarrollado con rigurosidad académica para la aprobación del Taller Práctico Experimental II.</p>
+        </div>
+    </footer>
 
     <script src="{% static 'funciones.js' %}"></script>
 </body>
