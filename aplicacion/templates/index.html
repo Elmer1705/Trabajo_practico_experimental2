@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Multiplicar</title>
+    
+    <link rel="stylesheet" href="{% static 'estilos.css' %}">
+</head>
+<body>
+
+    <div class="contenedor-formulario">
+        <h2>Calculadora de Tablas</h2>
+        
+        <div class="grupo-entrada">
+            <label for="numeroTabla">¿Qué tabla deseas calcular?</label>
+            <input type="number" id="numeroTabla" placeholder="Ej. 5">
+        </div>
+
+        <div class="grupo-entrada">
+            <label for="numeroLimite">¿Hasta qué número multiplicar?</label>
+            <input type="number" id="numeroLimite" placeholder="Ej. 12">
+        </div>
+
+        <button id="btnCalcular">Calcular Tabla</button>
+
+        <div id="resultadoTabla" class="resultado"></div>
+    </div>
+<button id="btnCalcular">Calcular Tabla</button>
+
+        <div id="resultadoTabla" class="resultado"></div>
+    </div>
+
+    <script src="{% static 'funciones.js' %}"></script>
+</body>
+</html>

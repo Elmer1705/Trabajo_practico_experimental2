@@ -1,0 +1,85 @@
+/* Configuración general de la página */
+body {
+    background-color: #f0f4f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Caja contenedora del formulario */
+.contenedor-formulario {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h2 {
+    color: #334e68;
+    margin-bottom: 25px;
+}
+
+/* Organización de las etiquetas y cuadros de texto */
+.grupo-entrada {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    color: #486581;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+/* Cambio de color cuando el usuario hace clic en el cuadro */
+input:focus {
+    border-color: #627d98;
+    outline: none;
+}
+
+/* Estilo del botón de ejecutar */
+button {
+    background-color: #243b53;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+/* Efecto cuando pasas el mouse por encima del botón */
+button:hover {
+    background-color: #334e68;
+}
+
+/* Espacio donde saldrán los números multiplicados */
+.resultado {
+    margin-top: 20px;
+    text-align: left;
+    color: #102a43;
+    font-size: 16px;
+    line-height: 1.6;
+}
